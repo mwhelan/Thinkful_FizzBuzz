@@ -1,9 +1,26 @@
 $(document).ready(function() {
-	for(var number = 1; number <= 100; number++) {
-		var fizzBuzz = getFizzBuzzValueFor(number);
-		printLine(fizzBuzz);
-	}
+	$("#submitButton").click(function() {
+		var playFizzBuzz = true;
+		while(playFizzBuzz)
+		{
+			var input = prompt("Please enter an integer number");
+			if(isInteger(input)) {
+				fizzBuzz(input);
+				playFizzBuzz = false;
+			} else {
+				playFizzBuzz = confirm("'" + input + "' is not an integer number. Press 'OK' to enter an integer number or 'Cancel' to finish.");
+			}	
+		}
+	});
+
 });
+
+function fizzBuzz(limit) {
+	$("#data").empty();
+	for(var number = 1; number <= limit; number++) {
+		printLine(getFizzBuzzValueFor(number));
+	}
+}
 
 function getFizzBuzzValueFor(number) {
 	if (number % 3 == 0 && number % 5 == 0) {
@@ -20,7 +37,18 @@ function getFizzBuzzValueFor(number) {
 	}
 }
 
+function isInteger(input) {
+	var value = +input;
+	if(isNaN(input)){
+		return false; 
+	}
+	if(input % 1 != 0){
+		return false;
+	}
+	return true;
+}
+
 function printLine(line) {
 	var output = line + "<br>";
-	$("body").append(output);
+	$("#data").append(output);
 }
