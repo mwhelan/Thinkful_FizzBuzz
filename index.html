@@ -3,12 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-	<script src="http://code.jquery.com/jquery-1.8.2.js"></script>  
+	<script src="http://code.jquery.com/jquery-1.11.0.js"></script>  
+	<link rel="stylesheet" href="bootstrap-3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap-3.1.1/css/bootstrap-theme.min.css">
+	<script src="bootstrap-3.1.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="main.css">
 	<script src="app.js"></script>
 </head>
 <body>
-	<input type="submit" value="Play FizzBuzz!" id="submitButton"><br>
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">FizzBuzz</a>
+        </div>
+      </div>
+    </div>
 
-	<div id="data"></div>
+	<div class="container">
+		<div class="wrapper">
+			<a id="submitButton" class="btn btn-primary btn-lg">Play FizzBuzz!</a><br>
+
+			<div id="data"></div>
+		</div>
+	</div>
 </body>
 </html>

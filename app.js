@@ -49,6 +49,20 @@ function isInteger(input) {
 }
 
 function printLine(line) {
-	var output = line + "<br>";
+	var className;
+	if(line == "fizz") {
+		className = "alert-success";
+	}
+	else if(line == "buzz"){
+		className = "alert-warning";
+	}
+	else if(line == "fizzbuzz"){
+		className = "alert-danger";
+	}
+	else {
+		className = "alert-info";
+	}
+
+	var output = "<div class='alert " + className + "'>" + line + "</div>";
 	$("#data").append(output);
 }
